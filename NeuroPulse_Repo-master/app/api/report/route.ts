@@ -330,7 +330,7 @@ export async function POST(request: NextRequest) {
 </body>
 </html>`
 
-    // Return as HTML with proper content-type for browser display
+  
     const filename = `NeuroPulse_Report_${Date.now()}.html`
 
     return new NextResponse(html, {

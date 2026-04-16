@@ -42,7 +42,6 @@ export async function POST(request: NextRequest) {
 
     if (result.error) {
       console.error('[validate] spawn error:', result.error.message)
-      // If Python command not found, try alternate
       if (result.error.message.includes('ENOENT')) {
         const alt    = pythonCmd === 'python' ? 'python3' : 'python'
         const retry  = spawnSync(alt, [scriptPath, 'validate', tmpPath], {

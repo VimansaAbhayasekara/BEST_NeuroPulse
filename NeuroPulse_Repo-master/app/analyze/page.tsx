@@ -84,7 +84,6 @@ export default function AnalyzePage() {
     }
   }, [file, state])
 
-  // Fixed: View Report - opens in new tab as HTML
   const viewReport = useCallback(async () => {
     if (!result) return
     setIsGenerating('view')
@@ -100,7 +99,6 @@ export default function AnalyzePage() {
       
       const html = await res.text()
       
-      // Open in new tab
       const reportWindow = window.open()
       if (reportWindow) {
         reportWindow.document.write(html)
@@ -109,7 +107,7 @@ export default function AnalyzePage() {
         toast.dismiss(tid)
         toast.success('Report opened in new tab')
       } else {
-        // Fallback: create blob and open
+       
         const blob = new Blob([html], { type: 'text/html' })
         const url = URL.createObjectURL(blob)
         window.open(url, '_blank')
@@ -125,7 +123,7 @@ export default function AnalyzePage() {
     }
   }, [result])
 
-  // Fixed: Download Report - saves as HTML file
+  
   const downloadReport = useCallback(async () => {
     if (!result) return
     setIsGenerating('download')
@@ -162,7 +160,7 @@ export default function AnalyzePage() {
     }
   }, [result])
 
-  // ── Results view ──────────────────────────────────────────────
+  
   if (state === 'RESULTS' && result) {
     return (
       <main className="min-h-screen bg-[#070b07] pt-20 px-4 py-8 sm:px-6 lg:px-10">
@@ -209,7 +207,7 @@ export default function AnalyzePage() {
               <SeverityReferenceCard result={result} />
             </motion.div>
             
-            {/* Report buttons - FIXED */}
+       
             <motion.div className="lg:col-span-3 flex justify-center gap-4 pt-4" custom={8} variants={FADE_UP} initial="hidden" animate="show">
               <button 
                 onClick={viewReport}
@@ -249,7 +247,7 @@ export default function AnalyzePage() {
     )
   }
 
-  // ── Analyzing skeleton ────────────────────────────────────────
+ 
   if (state === 'ANALYZING') {
     return (
       <main className="min-h-screen bg-[#070b07] pt-20 px-4 py-8 sm:px-6 lg:px-10">
@@ -276,7 +274,7 @@ export default function AnalyzePage() {
   // ── Upload view ───────────────────────────────────────────────
   return (
     <main className="min-h-screen bg-[#070b07] pt-16">
-      {/* Hero header */}
+   
       <div className="relative py-16 text-center border-b border-[#1e2e1e] grid-bg">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-emerald-900/10 rounded-full blur-3xl" />
@@ -299,14 +297,14 @@ export default function AnalyzePage() {
         </div>
       </div>
 
-      {/* Upload section */}
+    
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
-          {/* Upload card */}
+       
           <div className="rounded-2xl border border-[#1e2e1e] bg-[#0f150f] p-6 mb-5">
             <div className="flex items-center justify-between mb-4">
               <div>
@@ -321,7 +319,7 @@ export default function AnalyzePage() {
               )}
             </div>
 
-            {/* Drop zone */}
+          
             <div
               onDragOver={e => { e.preventDefault(); setDragging(true) }}
               onDragLeave={() => setDragging(false)}
@@ -365,7 +363,7 @@ export default function AnalyzePage() {
               )}
             </div>
 
-            {/* Selected file info */}
+            
             {file && (
               <div className={`mt-4 px-4 py-3 rounded-xl border flex items-center gap-3 ${
                 state === 'VALID'   ? 'border-emerald-700/40 bg-emerald-950/20' :
@@ -383,7 +381,7 @@ export default function AnalyzePage() {
             )}
           </div>
 
-          {/* Analyze button */}
+        
           <button
             onClick={analyze}
             disabled={state !== 'VALID'}
@@ -393,7 +391,7 @@ export default function AnalyzePage() {
             Analyze EEG
           </button>
 
-          {/* Feature pills */}
+      
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
             {[
               { icon: Brain,    label: 'CNN+GRU Model' },

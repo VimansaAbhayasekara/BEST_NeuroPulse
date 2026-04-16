@@ -31,10 +31,10 @@ export async function POST(request: NextRequest) {
       timeout:   280000,
       cwd:       process.cwd(),
       maxBuffer: 10 * 1024 * 1024,
-      env: { ...process.env, PYTHONPATH: process.cwd() },  // add this line
+      env: { ...process.env, PYTHONPATH: process.cwd() }, 
     })
 
-    // Auto-retry with alternate python command if not found
+
     if (result.error?.message?.includes('ENOENT')) {
       const alt = pythonCmd === 'python' ? 'python3' : 'python'
       console.log('[predict] Retrying with', alt)

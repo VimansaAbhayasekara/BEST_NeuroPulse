@@ -1,0 +1,56 @@
+{
+  "model_name": "NeuroPulse_CNN_BiGRU_Attention",
+  "version": "2.0",
+  "date": "2026-03-26 08:23:55",
+  "input_shape": [
+    19,
+    12
+  ],
+  "n_channels": 19,
+  "n_features_per_channel": 12,
+  "feature_names": [
+    "delta",
+    "theta",
+    "alpha",
+    "beta",
+    "gamma",
+    "theta_alpha_ratio",
+    "delta_alpha_ratio",
+    "slowing_index",
+    "hjorth_activity",
+    "hjorth_mobility",
+    "hjorth_complexity",
+    "hjorth_norm_mob"
+  ],
+  "frequency_bands": {
+    "delta": [
+      0.5,
+      4.0
+    ],
+    "theta": [
+      4.0,
+      8.0
+    ],
+    "alpha": [
+      8.0,
+      13.0
+    ],
+    "beta": [
+      13.0,
+      30.0
+    ],
+    "gamma": [
+      30.0,
+      45.0
+    ]
+  },
+  "sfreq": 500,
+  "epoch_seconds": 4.0,
+  "overlap_seconds": 2.0,
+  "test_results": {
+    "epoch_MAE": 4.510383605957031,
+    "epoch_R2": -1.6609795093536377,
+    "subject_MAE": 3.964200258255005,
+    "subject_R2": -1.4032089710235596
+  }
+}

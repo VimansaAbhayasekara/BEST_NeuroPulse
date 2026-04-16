@@ -99,7 +99,6 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* FAQ list */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

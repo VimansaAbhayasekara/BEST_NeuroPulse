@@ -18,9 +18,8 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#070b07] overflow-x-hidden">
 
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center pt-16 grid-bg">
-        {/* Ambient glow */}
+    
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-emerald-900/20 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-teal-900/15 rounded-full blur-3xl" />
@@ -29,7 +28,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-            {/* Left — text */}
+          
             <div>
               <motion.div {...FADE(0.1)}
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-800/50 bg-emerald-950/40 text-emerald-400 text-xs font-medium mb-6">
@@ -62,7 +61,7 @@ export default function HomePage() {
                 </Link>
               </motion.div>
 
-              {/* Stats row */}
+              
               <motion.div {...FADE(0.3)} className="flex gap-6 mt-10 pt-8 border-t border-[#1e2e1e]">
                 {[
                   { val: 'CNN+GRU', label: 'Model Architecture' },
@@ -77,16 +76,16 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Right — visual */}
+           
             <motion.div
               initial={{ opacity: 0, scale: 0.95, x: 40 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              {/* Brain SVG illustration */}
+              
               <div className="relative rounded-3xl overflow-hidden border border-[#1e2e1e] bg-gradient-to-br from-[#0f150f] to-[#162016] aspect-[4/3] flex items-center justify-center shadow-2xl shadow-black/50">
-                {/* Decorative circuit lines */}
+                
                 <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 400 300">
                   <path d="M50,150 Q100,80 200,100 Q300,120 350,80" stroke="#10b981" fill="none" strokeWidth="1" strokeDasharray="4,4" />
                   <path d="M50,170 Q150,220 200,200 Q250,180 350,220" stroke="#0d9488" fill="none" strokeWidth="1" strokeDasharray="4,4" />
@@ -101,7 +100,7 @@ export default function HomePage() {
                   <circle cx="200" cy="150" r="40" stroke="#10b981" fill="rgba(16,185,129,0.05)" strokeWidth="0.5" />
                 </svg>
 
-                {/* Center brain icon */}
+              
                 <div className="relative z-10 flex flex-col items-center gap-4">
                   <div className="animate-float">
                     <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-emerald-900/60 to-teal-900/60 border border-emerald-700/30 flex items-center justify-center shadow-xl shadow-emerald-900/40">
@@ -115,7 +114,7 @@ export default function HomePage() {
                       </div>
                     ))}
                   </div>
-                  {/* Mock waveform */}
+                 
                   <svg width="240" height="40" viewBox="0 0 240 40">
                     <polyline
                       points="0,20 10,5 20,30 30,10 40,25 50,8 60,32 70,12 80,22 90,6 100,28 110,14 120,20 130,4 140,30 150,10 160,24 170,8 180,28 190,15 200,22 210,7 220,30 230,14 240,20"
@@ -123,7 +122,7 @@ export default function HomePage() {
                   </svg>
                 </div>
 
-                {/* Corner badges */}
+               
                 <div className="absolute top-4 right-4 flex flex-col gap-2">
                   <div className="px-2.5 py-1 rounded-lg bg-[#070b07]/80 border border-[#1e2e1e] text-emerald-400 text-xs font-medium">
                     MMSE Prediction
@@ -138,7 +137,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── How it works ──────────────────────────────────────────── */}
+      
       <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...FADE(0)} className="text-center mb-14">
@@ -194,7 +193,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── What NeuroPulse predicts ──────────────────────────────── */}
+      
       <section className="py-24 border-t border-[#1e2e1e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...FADE(0)} className="text-center mb-14">
@@ -239,7 +238,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Why it matters ────────────────────────────────────────── */}
+      
       <section className="py-24 border-t border-[#1e2e1e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
